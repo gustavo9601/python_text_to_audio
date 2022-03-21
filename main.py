@@ -41,8 +41,11 @@ def create_file():
 
 
 def make_request_synthesis(text: str):
-    logging_and_print(f"Making request to text: {text}")
-    return gtts.gTTS(text, lang=lang)
+    logging_and_print(f"Making request to text")
+    try:
+        return gtts.gTTS(text, lang=lang)
+    except:
+        logging_and_print(f"Error making request to Google")
 
 
 def save_file(tts):
